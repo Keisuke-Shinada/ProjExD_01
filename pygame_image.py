@@ -31,7 +31,10 @@ def main():
         pg.display.update()
         x += 1
         tmr += 1
+        if x>1600:
+            x=0
         clock.tick(100)
+        
 
 
 if __name__ == "__main__":
