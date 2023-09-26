@@ -11,18 +11,21 @@ def main():
     kk_img = pg.transform.flip(kk_img, True, False)
     kk10_img = pg.transform.rotozoom(kk_img, 10, 1.0)
     tmr = 0
+    x = 0
     
     bird_img =[kk_img,kk10_img] 
     
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
-
-        screen.blit(bg_img, [0, 0])
-        screen.blit(bird_img[tmr%2],[300,200])
+        
+        screen.blit(bg_img, [-x, 0])
+        screen.blit(bg_img, [1600-x, 0])
+        screen.blit(bird_img[tmr%2], [300,200])
         pg.display.update()
+        x += 1
         tmr += 1        
-        clock.tick(10)
+        clock.tick(100)
 
 
 if __name__ == "__main__":
