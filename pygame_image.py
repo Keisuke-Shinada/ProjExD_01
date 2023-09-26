@@ -9,8 +9,11 @@ def main():
     bg_img = pg.image.load("ex01/fig/pg_bg.jpg")
     kk_img = pg.image.load("ex01/fig/3.png")
     kk_img = pg.transform.flip(kk_img, True, True)
-    kk_img = pg.transform.rotozoom(kk_img, 10, 1.0)
+    kk10_img = pg.transform.rotozoom(kk_img, 10, 1.0)
     tmr = 0
+    
+    bird_img =[kk_img,kk10_img] 
+    
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
